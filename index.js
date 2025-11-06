@@ -34,15 +34,15 @@ const easyQuestions = [
 const normalQuestions = [
     {
         id: 1,
-        prompt: "Normal When did the Vietnam War end?",
-        choices: { a: 1975, b: 1976, c: 1965, d: 1967},
-        correct: "a",
+        prompt: "In which county is England's largest forest?",
+        choices: { a: "Derbyshire", b: "Northumberland", c: "Gloucestershire", d: "West Midlands"},
+        correct: "b",
     },
     {
         id: 2,
-        prompt: "Who was the first person to land on the moon?",
-        choices: { a: "Neil Armstrong", b: "Buzz Aldrin", c: "Pete Conrad", d: "Alan Bean"},
-        correct: "a",
+        prompt: "Which tree's leaves are the symbol of the national trust?",
+        choices: { a: "Beech", b: "Sycamore", c: "Oak", d: "Maple"},
+        correct: "c",
     },
     {
         id: 3,
@@ -95,26 +95,38 @@ const hardQuestions = [
         choices: { a: "10", b: "16", c: "12", d: "8"},
         correct: "c",
     },
+    {
+        id: 6,
+        prompt: "What is the closest planet to the sun?",
+        choices: { a: "Venus", b: "Mars", c: "Jupiter", d: "Mercury"},
+        correct: "d",
+    },
+    {
+        id: 7,
+        prompt: "How many Sour Patch Kids in a serving?",
+        choices: { a: "10", b: "16", c: "12", d: "8"},
+        correct: "c",
+    },
 ];
 
 const expertQuestions = [
     {
         id: 1,
-        prompt: "Expert When did the Vietnam War end?",
-        choices: { a: 1975, b: 1976, c: 1965, d: 1967},
-        correct: "a",
+        prompt: "Which tree do we get turpentine from?",
+        choices: { a: "Magnolia", b: "Pine", c: "Birch", d: "Willow"},
+        correct: "b",
     },
     {
         id: 2,
-        prompt: "Who was the first person to land on the moon?",
-        choices: { a: "Neil Armstrong", b: "Buzz Aldrin", c: "Pete Conrad", d: "Alan Bean"},
-        correct: "a",
+        prompt: 'What book begins: "It was a bright cold day in April, and the clocks were striking thirteen"?',
+        choices: { a: "Animal Farm", b: "Fahrenheit 451", c: "1984", d: "The Handmaid's Tale"},
+        correct: "c",
     },
     {
         id: 3,
-        prompt: "How many Pirates of the Caribbean films are there",
-        choices: { a: 4, b: 5, c: 6, d: 7},
-        correct: "b",
+        prompt: "Which garden tree with yellow flowers has poisonous seeds?",
+        choices: { a: "Bay laurel", b: "Baobab", c: "Walnut", d: "Laburnum"},
+        correct: "d",
     },
     {
         id: 4,
@@ -145,12 +157,12 @@ const site = document.getElementById("site");
 function welcomeView() {
     return `
         <section class="grid grid-cols-12 grid-rows-8 gap-6 mb-12 p-12
-                        bg-gradient-to-r from-yellow-200/40 to-orange-200/40 text-white">
-            <div class="col-start-2 row-span-1 col-span-6 text-left p-2">
+                        text-white">
+            <div class="lg:col-start-2 col-span-12 row-span-1 lg:col-span-6 text-left p-2">
                 <p class="text-4xl font-semibold font-mono text-gray-800 text-shadow-sm/2">Welcome to<br>Quiz O'Clock</p>
             </div>
 
-            <div class="grid grid-cols-12 gap-6 pb-10 col-start-2 col-span-4 row-span-6 bg-yellow-200 rounded-3xl p-8">
+            <div class="grid grid-cols-12 gap-6 pb-10 lg:col-start-2 lg:col-span-4 col-span-12 lg:row-span-6 row-span-3 bg-yellow-200 rounded-3xl p-8">
 
                 <div class="rounded-2xl bg-white text-black text-lg font-[Arial] col-span-12 p-4">
                     <p class="font-semibold text-2xl">About Quiz O'Clock</p>
@@ -159,7 +171,7 @@ function welcomeView() {
                 </div>
             </div>
 
-            <div class="grid grid-cols-12 grid-rows-5 gap-6 pb-10 col-start-6 col-span-6 row-span-6 bg-yellow-200 rounded-3xl p-6">
+            <div class="grid grid-cols-12 grid-rows-5 gap-6 pb-10 lg:col-start-6 lg:col-span-6 col-span-12 row-span-6 bg-yellow-200 rounded-3xl p-6">
                 <!-- Centered two-line overlapping pills -->
                 <div class="col-start-5 col-span-4 flex flex-col items-center">
                     <!-- Top pill: slightly narrower, sits above -->
@@ -172,19 +184,19 @@ function welcomeView() {
                 </div>
 
                 <button name="difficulty" value="easy"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Easy Mode
                 </button>
                 <button name="difficulty" value="normal"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Normal Mode
                 </button>
                 <button name="difficulty" value="hard"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Hard Mode
                 </button>
                 <button name="difficulty" value="expert"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Expert Mode
                 </button>
             </div>
@@ -234,7 +246,7 @@ function quizView() {
 
     return `
         <section class="grid grid-cols-12 gap-6 p-12
-                        bg-gradient-to-r from-yellow-200/40 to-orange-200/40 text-white">
+                        text-white">
         <div class="col-start-4 col-span-6 text-center
                     bg-gradient-to-bl from-violet-500/50 to-fuchsia-500/50
                     p-6 rounded-full">
@@ -274,7 +286,7 @@ function resultsView() {
 
     return `
         <section class="grid grid-cols-12 gap-6 mb-12 p-12
-                        bg-gradient-to-r from-yellow-200/40 to-orange-200/40 text-black">
+                        text-black">
             <div class="grid grid-cols-12 gap-6 pb-10 mt-6 col-start-2 col-span-10 bg-yellow-200 rounded-3xl p-6">
                 <div class="col-start-1 col-span-3 flex flex-col">
                     <span class="rounded-full bg-white px-6 py-3 text-3xl font-semibold font-mono text-center">
