@@ -166,7 +166,7 @@ function welcomeView() {
 
                 <div class="rounded-2xl bg-white text-black text-lg font-[Arial] col-span-12 p-4">
                     <p class="font-semibold text-2xl">About Quiz O'Clock</p>
-                    <p class="p-2 font-[Arial]">Hello there. This is Quiz O'Clock. The game of taking no risks. These questions will truly test whether you are a genius, or an utter moron.
+                    <p class="p-2 font-[Arial]">Check the time... it's Quiz O'Clock!<br><br>This is a game of taking no risks. These questions will truly test whether you are a genius, or an utter moron.
                     <br><br>There are different levels of difficulty depending on how confident you are. If you aren't feeling up to the task yet, begin with easy mode and work your way up to expert.</p>
                 </div>
             </div>
@@ -247,19 +247,19 @@ function quizView() {
     return `
         <section class="grid grid-cols-12 gap-6 p-12
                         text-white">
-        <div class="col-start-4 col-span-6 text-center
+        <div class="lg:col-start-4 lg:col-span-6 col-start-2 col-span-10 text-center
                     bg-gradient-to-bl from-violet-500/50 to-fuchsia-500/50
-                    p-6 rounded-full">
+                    p-6 mb-6 rounded-full">
             <p class="text-3xl p-2">${q.prompt}</p>
         </div>
 
         <!-- No bg on wrappers; the button carries its own gradient and fills width -->
-        <div class="col-start-3 col-span-4">${choiceBtn("a", a, styleA)}</div>
-        <div class="col-span-4">${choiceBtn("b", b, styleB)}</div>
-        <div class="col-start-3 col-span-4">${choiceBtn("c", c, styleC)}</div>
-        <div class="col-span-4">${choiceBtn("d", d, styleD)}</div>
+        <div class="lg:col-start-3 lg:col-span-4 col-start-2 col-span-10">${choiceBtn("a", a, styleA)}</div>
+        <div class="lg:col-span-4 col-start-2 col-span-10">${choiceBtn("b", b, styleB)}</div>
+        <div class="lg:col-start-3 lg:col-span-4 col-start-2 col-span-10">${choiceBtn("c", c, styleC)}</div>
+        <div class="lg:col-span-4 col-start-2 col-span-10">${choiceBtn("d", d, styleD)}</div>
 
-        <div class="col-start-5 col-span-4">${continueBtn}</div>
+        <div class="lg:col-start-5 lg:col-span-4 col-start-2 col-span-10 px-8 py-5">${continueBtn}</div>
         </section>
     `;
 }
