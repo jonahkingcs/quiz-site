@@ -5,3 +5,8 @@ body {
 h1 {
     text-align: center;
 }
+
+@keyframes drainSlide {
+  from { transform: translateX(0%); }     /* red covers all */
+  to   { transform: translateX(-100%); }  /* red fully slid out left; all white */
+}

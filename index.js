@@ -46,66 +46,54 @@ const normalQuestions = [
     },
     {
         id: 3,
-        prompt: "How many Pirates of the Caribbean films are there",
-        choices: { a: 4, b: 5, c: 6, d: 7},
-        correct: "b",
+        prompt: "At which racecourse is the Grand National run?",
+        choices: { a: "Aintree", b: "Cheltenham", c: "Epsom Downs", d: "Ascot"},
+        correct: "a",
     },
     {
         id: 4,
-        prompt: "What is the closest planet to the sun?",
-        choices: { a: "Venus", b: "Mars", c: "Jupiter", d: "Mercury"},
+        prompt: "What French word describes a dish served before the main course of a meal?",
+        choices: { a: "Apéritif", b: "Hors d'oeuvre", c: "Potage", d: "Entrée"},
         correct: "d",
     },
     {
         id: 5,
-        prompt: "How many Sour Patch Kids in a serving?",
-        choices: { a: "10", b: "16", c: "12", d: "8"},
-        correct: "c",
+        prompt: "Who created Git?",
+        choices: { a: "Bill Gates", b: "Linus Torvalds", c: "Gabe Newell", d: "Tom Anderson"},
+        correct: "b",
     },
 ];
 
 const hardQuestions = [
     {
         id: 1,
-        prompt: "Hard When did the Vietnam War end?",
-        choices: { a: 1975, b: 1976, c: 1965, d: 1967},
-        correct: "a",
-    },
-    {
-        id: 2,
-        prompt: "Who was the first person to land on the moon?",
-        choices: { a: "Neil Armstrong", b: "Buzz Aldrin", c: "Pete Conrad", d: "Alan Bean"},
-        correct: "a",
-    },
-    {
-        id: 3,
-        prompt: "How many Pirates of the Caribbean films are there",
-        choices: { a: 4, b: 5, c: 6, d: 7},
+        prompt: "Which studio provided the sets for The Shining?",
+        choices: { a: "Touchstone Pictures", b: "Elstree Studios", c: "Summit Entertainment", d: "Buster Keaton Productions"},
         correct: "b",
     },
     {
+        id: 2,
+        prompt: 'Who composed the sound track of "Tron: Legacy"',
+        choices: { a: "Deadmau5", b: "Julian Casablancas", c: "Gorillaz", d: "Daft Punk"},
+        correct: "d",
+    },
+    {
+        id: 3,
+        prompt: "How many Americans receive food stamps?",
+        choices: { a: "42 Million", b: "13 Million", c: "800 Thousand", d: "25 Million"},
+        correct: "a",
+    },
+    {
         id: 4,
-        prompt: "What is the closest planet to the sun?",
-        choices: { a: "Venus", b: "Mars", c: "Jupiter", d: "Mercury"},
+        prompt: "Which nickname is shared by both Liverpool and Nottingham Forest football teams?",
+        choices: { a: "Seagulls", b: "Tigers", c: "Spurs", d: "The Reds"},
         correct: "d",
     },
     {
         id: 5,
-        prompt: "How many Sour Patch Kids in a serving?",
-        choices: { a: "10", b: "16", c: "12", d: "8"},
-        correct: "c",
-    },
-    {
-        id: 6,
-        prompt: "What is the closest planet to the sun?",
-        choices: { a: "Venus", b: "Mars", c: "Jupiter", d: "Mercury"},
-        correct: "d",
-    },
-    {
-        id: 7,
-        prompt: "How many Sour Patch Kids in a serving?",
-        choices: { a: "10", b: "16", c: "12", d: "8"},
-        correct: "c",
+        prompt: "When was the basic rate of income tax last raised in the UK?",
+        choices: { a: 1987, b: 1975, c: 2008, d: 2001},
+        correct: "b",
     },
 ];
 
@@ -130,15 +118,15 @@ const expertQuestions = [
     },
     {
         id: 4,
-        prompt: "What is the closest planet to the sun?",
-        choices: { a: "Venus", b: "Mars", c: "Jupiter", d: "Mercury"},
-        correct: "d",
+        prompt: "What casino card game is also known as 21?",
+        choices: { a: "Blackjack", b: "Canasta", c: "Rummy", d: "Scopa"},
+        correct: "a",
     },
     {
         id: 5,
-        prompt: "How many Sour Patch Kids in a serving?",
-        choices: { a: "10", b: "16", c: "12", d: "8"},
-        correct: "c",
+        prompt: "What animal are Rock hyraxes most closely related to?",
+        choices: { a: "Elephants", b: "Meerkats", c: "Wallabies", d: "Chinchillas"},
+        correct: "a",
     },
 ];
 
@@ -166,8 +154,9 @@ function welcomeView() {
 
                 <div class="rounded-2xl bg-white text-black text-lg font-[Arial] col-span-12 p-4">
                     <p class="font-semibold text-2xl">About Quiz O'Clock</p>
-                    <p class="p-2 font-[Arial]">Check the time... it's Quiz O'Clock!<br><br>This is a game of taking no risks. These questions will truly test whether you are a genius, or an utter moron.
-                    <br><br>There are different levels of difficulty depending on how confident you are. If you aren't feeling up to the task yet, begin with easy mode and work your way up to expert.</p>
+                    <p class="p-2 font-[Arial]">Check the time... it's Quiz O'Clock!<br><br>This is a game of taking no risks. These questions will truly test whether you are a genius, or a total idiot.
+                    <br><br>There are different levels of difficulty depending on how confident you are. If you aren't feeling up to the task yet, begin with easy mode, then work your way up to expert.
+                    <br><br>Good luck and most importantly, have fun!</p>
                 </div>
             </div>
 
@@ -244,9 +233,21 @@ function quizView() {
         </button>
     `;
 
+        // if a choice is selected, pause the bar’s animation
+        const barAnimClass = sel
+            ? "[animation-play-state:paused]"
+            : "animate-[drainSlide_10s_linear_forwards]";
+
     return `
         <section class="grid grid-cols-12 gap-6 p-12
                         text-white">
+
+        <div class="lg:col-start-4 lg:col-span-6 mb-6 col-start-2 col-span-10">
+            <div class="relative h-4 rounded-full bg-white overflow-hidden">
+            <div class="absolute inset-0 bg-orange-500 rounded-full ${barAnimClass}"></div>
+            </div>
+        </div>
+
         <div class="lg:col-start-4 lg:col-span-6 col-start-2 col-span-10 text-center
                     bg-gradient-to-bl from-violet-500/50 to-fuchsia-500/50
                     p-6 mb-6 rounded-full">
