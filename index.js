@@ -276,8 +276,8 @@ function resultsView() {
 
         return `
             <li class="p-6 mt-4 mb-4 rounded-full ${ok ? 'bg-green-200' : 'bg-red-200'}">
-                <p class="font-medium">Q${i + 1}. ${a.prompt}</p>
-                <p class="text-sm mt-2">
+                <p class="font-medium text-sm lg:text-md">Q${i + 1}. ${a.prompt}</p>
+                <p class="text-xs lg:text-sm mt-2">
                     Your answer: <span class="font-semibold">${userText}</span>
                     ${ok ? 'Correct!' : `Wrong! (Correct: ${correctText})`}
                 </p>
@@ -290,13 +290,13 @@ function resultsView() {
                         text-black">
             <div class="grid grid-cols-12 gap-6 pb-10 mt-6 lg:col-start-2 lg:col-span-10 col-span-12 bg-yellow-200 rounded-3xl p-6">
                 <div class="col-start-1 col-span-6 lg:col-span-3 flex flex-col">
-                    <span class="rounded-full bg-white px-6 py-3 text-3xl font-semibold font-mono text-center">
+                    <span class="rounded-full bg-white px-6 py-3 text-xl lg:text-3xl font-semibold font-mono text-center">
                     Results
                     </span>
                 </div>
                 <div class="col-start-1 col-span-12 bg-white rounded-4xl">
                     <div class="col-start-1 col-span-3 flex flex-col">
-                        <span class="rounded-full pt-4 pl-12 text-3xl font-semibold font-mono text-left">
+                        <span class="rounded-full pt-4 pl-12 text-xl lg:text-3xl font-semibold font-mono text-left">
                             <h2>Your score was: ${finalScore}/${total}</h2>
                         </span>
                     </div>
