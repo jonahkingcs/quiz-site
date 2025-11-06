@@ -144,13 +144,13 @@ const site = document.getElementById("site");
 
 function welcomeView() {
     return `
-        <section class="grid grid-cols-12 grid-rows-8 gap-6 mb-12 p-12
+        <section class="grid grid-cols-12 grid-rows-8 gap-6 mb-12 lg:p-12 p-4
                         text-white">
-            <div class="lg:col-start-2 col-span-12 row-span-1 lg:col-span-6 text-left p-2">
+            <div class="lg:col-start-2 col-span-12 row-span-1 lg:col-span-6 text-left p-4">
                 <p class="text-4xl font-semibold font-mono text-gray-800 text-shadow-sm/2">Welcome to<br>Quiz O'Clock</p>
             </div>
 
-            <div class="grid grid-cols-12 gap-6 pb-10 lg:col-start-2 lg:col-span-4 col-span-12 lg:row-span-6 row-span-3 bg-yellow-200 rounded-3xl p-8">
+            <div class="grid grid-cols-12 gap-6 pb-10 lg:col-start-2 lg:col-span-4 col-span-12 lg:row-span-6 lg:-mt-2 -mt-12 row-span-3 bg-yellow-200 rounded-3xl p-8">
 
                 <div class="rounded-2xl bg-white text-black text-lg font-[Arial] col-span-12 p-4">
                     <p class="font-semibold text-2xl">About Quiz O'Clock</p>
@@ -160,7 +160,7 @@ function welcomeView() {
                 </div>
             </div>
 
-            <div class="grid grid-cols-12 grid-rows-5 gap-6 pb-10 lg:col-start-6 lg:col-span-6 col-span-12 row-span-6 bg-yellow-200 rounded-3xl p-6">
+            <div class="grid grid-cols-12 grid-rows-5 gap-6 pb-10 lg:col-start-6 lg:col-span-6 col-span-12 row-span-4 lg:-mt-2 lg:row-span-6 bg-yellow-200 rounded-3xl p-6">
                 <!-- Centered two-line overlapping pills -->
                 <div class="col-start-5 col-span-4 flex flex-col items-center">
                     <!-- Top pill: slightly narrower, sits above -->
