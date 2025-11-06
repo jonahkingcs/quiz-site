@@ -286,7 +286,7 @@ function resultsView() {
     }).join("");
 
     return `
-        <section class="grid grid-cols-12 gap-6 mb-12 p-12
+        <section class="grid grid-cols-12 gap-6 mb-12 lg:p-12 p-4
                         text-black">
             <div class="grid grid-cols-12 gap-6 pb-10 mt-6 lg:col-start-2 lg:col-span-10 col-span-12 bg-yellow-200 rounded-3xl p-6">
                 <div class="col-start-1 col-span-6 lg:col-span-3 flex flex-col">
