@@ -164,10 +164,10 @@ function welcomeView() {
                 <!-- Centered two-line overlapping pills -->
                 <div class="col-start-5 col-span-4 flex flex-col items-center">
                     <!-- Top pill: slightly narrower, sits above -->
-                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-2xl lg:text-3xl font-semibold font-mono">
+                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-3xl font-semibold font-mono">
                     Choose
                     </span>
-                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-2xl lg:text-3xl font-semibold font-mono -mt-4">
+                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-3xl font-semibold font-mono -mt-4">
                     Difficulty
                     </span>
                 </div>
