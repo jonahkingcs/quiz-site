@@ -289,14 +289,14 @@ function resultsView() {
         <section class="grid grid-cols-12 gap-6 mb-12 lg:p-12 p-4
                         text-black">
             <div class="grid grid-cols-12 gap-6 pb-10 mt-6 lg:col-start-2 lg:col-span-10 col-span-12 bg-yellow-200 rounded-3xl p-6">
-                <div class="col-start-1 col-span-6 lg:col-span-3 flex flex-col">
+                <div class="col-start-1 col-span-7 lg:col-span-3 flex flex-col">
                     <span class="rounded-full bg-white px-6 py-3 text-lg lg:text-3xl font-semibold font-mono text-center">
                     Results
                     </span>
                 </div>
                 <div class="col-start-1 col-span-12 bg-white rounded-4xl">
                     <div class="col-start-1 col-span-3 flex flex-col">
-                        <span class="rounded-full pt-4 pl-12 text-lg lg:text-3xl font-semibold font-mono text-left">
+                        <span class="rounded-full pt-4 pl-4 lg:pl-12 text-lg lg:text-3xl font-semibold font-mono text-left">
                             <h2>Your score was: ${finalScore}/${total}</h2>
                         </span>
                     </div>
