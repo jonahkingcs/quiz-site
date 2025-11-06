@@ -274,7 +274,7 @@ function resultsView() {
         const ok = a.correct;
 
         return `
-            <li class="p-6 m-4 rounded-full ${ok ? 'bg-green-200' : 'bg-red-200'}">
+            <li class="p-6 mt-4 mb-4 rounded-full ${ok ? 'bg-green-200' : 'bg-red-200'}">
                 <p class="font-medium">Q${i + 1}. ${a.prompt}</p>
                 <p class="text-sm mt-2">
                     Your answer: <span class="font-semibold">${userText}</span>
@@ -287,8 +287,8 @@ function resultsView() {
     return `
         <section class="grid grid-cols-12 gap-6 mb-12 p-12
                         text-black">
-            <div class="grid grid-cols-12 gap-6 pb-10 mt-6 col-start-2 col-span-10 bg-yellow-200 rounded-3xl p-6">
-                <div class="col-start-1 col-span-3 flex flex-col">
+            <div class="grid grid-cols-12 gap-6 pb-10 mt-6 lg:col-start-2 lg:col-span-10 col-span-12 bg-yellow-200 rounded-3xl p-6">
+                <div class="col-start-1 col-span-6 lg:col-span-3 flex flex-col">
                     <span class="rounded-full bg-white px-6 py-3 text-3xl font-semibold font-mono text-center">
                     Results
                     </span>
@@ -299,7 +299,7 @@ function resultsView() {
                             <h2>Your score was: ${finalScore}/${total}</h2>
                         </span>
                     </div>
-                    <div class="pb-6 pt-2 pl-12 pr-12">
+                    <div class="pb-6 pt-2 lg:pl-12 lg:pr-12 pl-4 pr-4">
                         <ol>${answerHistory}</ol>
                     </div>
                 </div>
