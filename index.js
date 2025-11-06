@@ -147,13 +147,13 @@ function welcomeView() {
         <section class="grid grid-cols-12 grid-rows-8 gap-6 mb-12 lg:p-12 p-4
                         text-white">
             <div class="lg:col-start-2 col-span-12 row-span-1 lg:col-span-6 text-left p-4">
-                <p class="text-4xl font-semibold font-mono text-gray-800 text-shadow-sm/2">Welcome to<br>Quiz O'Clock</p>
+                <p class="text-2xl lg:text-4xl font-semibold font-mono text-gray-800 text-shadow-sm/2">Welcome to<br>Quiz O'Clock</p>
             </div>
 
             <div class="grid grid-cols-12 gap-6 pb-10 lg:col-start-2 lg:col-span-4 col-span-12 lg:row-span-6 lg:-mt-2 -mt-12 row-span-3 bg-yellow-200 rounded-3xl p-8">
 
-                <div class="rounded-2xl bg-white text-black text-lg font-[Arial] col-span-12 p-4">
-                    <p class="font-semibold text-2xl">About Quiz O'Clock</p>
+                <div class="rounded-2xl bg-white text-black text-sm lg:text-lg font-[Arial] col-span-12 p-4">
+                    <p class="font-semibold text-xl lg:text-2xl">About Quiz O'Clock</p>
                     <p class="p-2 font-[Arial]">Check the time... it's Quiz O'Clock!<br><br>This is a game of taking no risks. These questions will truly test whether you are a genius, or a total idiot.
                     <br><br>There are different levels of difficulty depending on how confident you are. If you aren't feeling up to the task yet, begin with easy mode, then work your way up to expert.
                     <br><br>Good luck and most importantly, have fun!</p>
@@ -164,28 +164,28 @@ function welcomeView() {
                 <!-- Centered two-line overlapping pills -->
                 <div class="col-start-5 col-span-4 flex flex-col items-center">
                     <!-- Top pill: slightly narrower, sits above -->
-                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-3xl font-semibold font-mono">
+                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-xl lg:text-3xl font-semibold font-mono">
                     Choose
                     </span>
-                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-3xl font-semibold font-mono -mt-4">
+                    <span class="inline-block rounded-full bg-white text-black px-6 py-3 text-xl lg:text-3xl font-semibold font-mono -mt-4">
                     Difficulty
                     </span>
                 </div>
 
                 <button name="difficulty" value="easy"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-lg lg:text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Easy Mode
                 </button>
                 <button name="difficulty" value="normal"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-lg lg:text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Normal Mode
                 </button>
                 <button name="difficulty" value="hard"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-lg lg:text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Hard Mode
                 </button>
                 <button name="difficulty" value="expert"
-                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
+                        class="col-start-2 col-span-10 mt-4 px-6 py-3 rounded-full bg-gray-900 text-lg lg:text-2xl font-semibold font-mono hover:bg-blue-900 hover:shadow-lg hover:scale-[1.03] transition">
                     Expert Mode
                 </button>
             </div>
@@ -213,7 +213,7 @@ function quizView() {
         return `
         <button ${aria}
                 name="choice" value="${key}"
-                class="w-full text-lg rounded-full
+                class="w-full text-sm lg:text-lg rounded-full
                         ${gradient} ${ring}
                         px-8 py-6 transition
                         hover:shadow-xl hover:scale-[1.03] focus:outline-none">
@@ -225,7 +225,7 @@ function quizView() {
     const continueDisabled = sel == null;
     const continueBtn = `
         <button name="action" value="continue" ${continueDisabled ? "disabled" : ""}
-                class="w-full text-xl rounded-full
+                class="w-full text-md lg:text-xl rounded-full
                     bg-gradient-to-br from-rose-500 to-fuchsia-600
                     px-8 py-5 transition
                     ${continueDisabled ? "opacity-50 cursor-not-allowed" : "hover:shadow-xl hover:scale-[1.02]"}">
@@ -239,7 +239,7 @@ function quizView() {
             : "animate-[drainSlide_10s_linear_forwards]";
 
     return `
-        <section class="grid grid-cols-12 gap-6 p-12
+        <section class="grid grid-cols-12 gap-6 lg:p-12 p-4
                         text-white">
 
         <div class="lg:col-start-4 lg:col-span-6 mb-6 col-start-2 col-span-10">
@@ -251,7 +251,7 @@ function quizView() {
         <div class="lg:col-start-4 lg:col-span-6 col-start-2 col-span-10 text-center
                     bg-gradient-to-bl from-violet-500/50 to-fuchsia-500/50
                     p-6 mb-6 rounded-full">
-            <p class="text-3xl p-2">${q.prompt}</p>
+            <p class="text-xl lg:text-3xl p-2">${q.prompt}</p>
         </div>
 
         <!-- No bg on wrappers; the button carries its own gradient and fills width -->
