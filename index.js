@@ -458,30 +458,30 @@ function clearTimer() {
 
 // Sets the 10 second timer
 function scheduleTimer() {
-  clearTimer();
-  const questionIndex = state.index;
+    clearTimer();
+    const questionIndex = state.index;
 
-  state.timeoutId = setTimeout(() => {
-    if (state.page !== "quiz" || state.index !== questionIndex) return;
+    state.timeoutId = setTimeout(() => {
+        if (state.page !== "quiz" || state.index !== questionIndex) return;
 
-    const q = state.difficulty[state.index];
-    const letter = state.selected;
-    const isCorrect = letter === q.correct;
+        const q = state.difficulty[state.index];
+        const letter = state.selected;
+        const isCorrect = letter === q.correct;
 
-    state.answers[state.index] = {
-      id: q.id,                         // Question ID
-      prompt: q.prompt,                 // Question itself
-      choice: letter,                   // Chosen answer
-      correct: !!letter && isCorrect,   // Correct or not or not chosen
-      correctChoice: q.correct,         // Correct answer
-      choices: q.choices,               // All choices
-      timedOut: true,                   // Records user running out of time and automatically moving to next question
-    };
+        state.answers[state.index] = {
+        id: q.id,                         // Question ID
+        prompt: q.prompt,                 // Question itself
+        choice: letter,                   // Chosen answer
+        correct: !!letter && isCorrect,   // Correct or not or not chosen
+        correctChoice: q.correct,         // Correct answer
+        choices: q.choices,               // All choices
+        timedOut: true,                   // Records user running out of time and automatically moving to next question
+        };
 
-    if (letter && isCorrect) state.score += 1;
+        if (letter && isCorrect) state.score += 1;
 
-    nextQuestion();
-  }, 10_000);
+        nextQuestion();
+    }, 10_000);
 }
 
 render();
