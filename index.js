@@ -359,13 +359,13 @@ function continueAfterSelection() {
 
   const isCorrect = letter === q.correct;
   state.answers[state.index] = {
-    id: q.id,
-    prompt: q.prompt,
-    choice: letter,
-    correct: isCorrect,
-    correctChoice: q.correct,
-    choices: q.choices,
-    timedOut: false,
+    id: q.id,                   // Question id
+    prompt: q.prompt,           // Question itself
+    choice: letter,             // Chosen answer
+    correct: isCorrect,         // Correct or not
+    correctChoice: q.correct,   // Correct answer
+    choices: q.choices,         // All choices
+    timedOut: false,            // Records user pressing continue rather than timing out
   };
   if (isCorrect) state.score += 1;
 
@@ -469,13 +469,13 @@ function scheduleTimer() {
     const isCorrect = letter === q.correct;
 
     state.answers[state.index] = {
-      id: q.id,
-      prompt: q.prompt,
-      choice: letter,
-      correct: !!letter && isCorrect,
-      correctChoice: q.correct,
-      choices: q.choices,
-      timedOut: true,
+      id: q.id,                         // Question ID
+      prompt: q.prompt,                 // Question itself
+      choice: letter,                   // Chosen answer
+      correct: !!letter && isCorrect,   // Correct or not or not chosen
+      correctChoice: q.correct,         // Correct answer
+      choices: q.choices,               // All choices
+      timedOut: true,                   // Records user running out of time and automatically moving to next question
     };
 
     if (letter && isCorrect) state.score += 1;
